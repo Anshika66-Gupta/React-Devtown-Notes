@@ -1,24 +1,18 @@
 import './App.css';
-import Gallery from './Profile';
-//import Welcome from './Welcome';
-//import Wishes from './Wishes';
+import Basic from './Basic';
+
 
 function App() {
   return (
     <div className="App">
-      {/*<h1>Hey Hi Everyone, Welcome to Devtown</h1>
-      <Wishes name="James" hobby="Cricket" >
-        <p>Anshika Gupta this side !!</p>
-        <button>CLick Here</button>
-        </Wishes>
-      
-      <Wishes name="John" hobby="Skating">
-        <button>Submit Here</button>
-        </Wishes>
-      <Wishes name="Clark" hobby="Badminton" />
-      <Welcome name =" Anshika" hobby="coding" />*/}
-
-<Gallery />
+      <Basic />
+      {/*<ClasCounter />*/}
+      {/*<HookCounter />*/}
+      {/*<StyledButton>Styled Button</StyledButton>
+      <div>
+        <br />
+        </div>*/}
+      {/*<StyledButton variant="outline">Styled Button</StyledButton>*/}
 
     </div>
   );
