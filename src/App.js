@@ -1,20 +1,24 @@
-import './App.css';
-import Basic from './Basic';
+import { useState } from 'react';
+import ProductPage from './ProductPage.js';
 
-
-function App() {
+export default function App() {
+  const [isDark, setIsDark] = useState(false);
   return (
-    <div className="App">
-      <Basic />
-      {/*<ClasCounter />*/}
-      {/*<HookCounter />*/}
-      {/*<StyledButton>Styled Button</StyledButton>
-      <div>
-        <br />
-        </div>*/}
-      {/*<StyledButton variant="outline">Styled Button</StyledButton>*/}
-
-    </div>
+    <>
+      <label>
+        <input
+          type="checkbox"
+          checked={isDark}
+          onChange={e => setIsDark(e.target.checked)}
+        />
+        Dark mode
+      </label>
+      <hr />
+      <ProductPage
+        referrerId="wizard_of_oz"
+        productId={123}
+        theme={isDark ? 'dark' : 'light'}
+      />
+    </>
   );
 }
-export default App;
