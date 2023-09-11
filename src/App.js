@@ -1,24 +1,40 @@
-import { useState } from 'react';
-import ProductPage from './ProductPage.js';
+//import Heading from './Heading.js';
+//import Section from './Section.js';
+
+import { useOnlineStatus } from "./UseOnlineStatus";
+
+//export default function Page() {
+//  return (
+//    <Section>
+//      <Heading>Title</Heading>
+//      <Section>
+//        <Heading>Heading</Heading>
+//        <Heading>Heading</Heading>
+//        <Heading>Heading</Heading>
+//        <Section>
+//          <Heading>Sub-heading</Heading>
+//          <Heading>Sub-heading</Heading>
+//          <Heading>Sub-heading</Heading>
+//          <Section>
+//            <Heading>Sub-sub-heading</Heading>
+//            <Heading>Sub-sub-heading</Heading>
+//            <Heading>Sub-sub-heading</Heading>
+//          </Section>
+//        </Section>
+//      </Section>
+//    </Section>
+//  );
+//}
+
+
+function StatusBar() {
+  const isOnline = useOnlineStatus();
+  //return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+  return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+
+
+}
 
 export default function App() {
-  const [isDark, setIsDark] = useState(false);
-  return (
-    <>
-      <label>
-        <input
-          type="checkbox"
-          checked={isDark}
-          onChange={e => setIsDark(e.target.checked)}
-        />
-        Dark mode
-      </label>
-      <hr />
-      <ProductPage
-        referrerId="wizard_of_oz"
-        productId={123}
-        theme={isDark ? 'dark' : 'light'}
-      />
-    </>
-  );
+  return <StatusBar />;
 }
